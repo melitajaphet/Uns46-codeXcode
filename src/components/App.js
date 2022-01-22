@@ -6,6 +6,8 @@ import Navbar from './Navbar'
 import Main from './Main'
 import Web3 from 'web3';
 import './App.css';
+import Particles from "react-tsparticles";
+import particlesOptions from "./particles.json";
 
 //Declare IPFS
 const ipfsClient = require('ipfs-http-client')
@@ -126,6 +128,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Particles options={particlesOptions}/>
         <Navbar account={this.state.account} />
         { this.state.loading
           ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
