@@ -1,0 +1,49 @@
+.input{
+    border: 2px solid #ccc;
+    width: 250px;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    /* background-color: white; */
+}
+input, select, textarea {
+    color: white;
+}
+input[type="search"]{
+    color: white;
+}
+
+
+
+.outer_box{
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    /* border: 2px solid rgb(36, 34, 34);
+    border-width: 20px; */
+    border: solid #ccc;
+    border-width: 3px;
+    margin-left: 250px;
+}
+
+#fileDescription{
+    text-align: center;
+    justify-content: center;
+    /* padding-top: 3px;
+    padding-bottom: 3px; */
+    background-color: rgba(0, 0, 0, 0)
+    
+}
+
+.upload_btn{
+    border: 2px solid rgb(73, 73, 83);
+    background-color: lightblue;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    margin-bottom: 8px;
+    
+}

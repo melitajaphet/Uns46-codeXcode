@@ -1,10 +1,12 @@
-pragma solidity 0.5.16;
+pragma solidity >=0.4.21 <0.6.0;
 
 
 contract DStorage {
   string public name = 'DStorage';
   uint public fileCount = 0;
+  uint public keyCount = 0;
   mapping(uint => File) public files;
+  mapping(uint => PublicKey) public p_keys;
 
   struct File {
     uint fileId;
@@ -17,6 +19,12 @@ contract DStorage {
     address payable uploader;
   }
 
+  struct PublicKey{
+    uint key_id;
+    string u_id;
+    string p_key;
+  } 
+
   event FileUploaded(
     uint fileId,
     string fileHash,
@@ -26,6 +34,12 @@ contract DStorage {
     string fileDescription,
     uint uploadTime,
     address payable uploader
+  );
+
+  event PublicKeyUpload(
+    uint key_id,
+    string u_id,
+    string p_key
   );
 
   constructor() public {
@@ -53,4 +67,14 @@ contract DStorage {
     // Trigger an event
     emit FileUploaded(fileCount, _fileHash, _fileSize, _fileType, _fileName, _fileDescription, now, msg.sender);
   }
+
+  function publickeyupload(string memory u_id, string memory p_key) public{
+
+    keyCount++;
+    p_keys[keyCount] = PublicKey(keyCount, u_id, p_key);
+
+    emit PublicKeyUpload(keyCount, u_id, p_key);
+
+  }
+
 }
